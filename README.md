@@ -36,6 +36,7 @@ function myAsyncFunction(){
     $.getJSON('/api/data.json');
 }
 
-function mySeparateFunction(data){ };
+function mySeparateFunction(data){/*do stuff*/};
+
 myAsyncFunction().done( mySeparateFunction );
 ```
