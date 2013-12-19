@@ -33,10 +33,12 @@ function mySeparateFunction(data){
 Here we are a little closer to separating our responsibilities by abstracting our callback into its own function but it is still explictly tied to the async call. With the help of promises, we can completely separate the two with the following:
 ```javascript
 function myAsyncFunction(){
-    $.getJSON('/api/data.json');
+    return $.getJSON('/api/data.json');
 }
 
 function mySeparateFunction(data){/*do stuff*/};
 
 myAsyncFunction().done( mySeparateFunction );
 ```
+
+With this last pattern, since we only care about firing `mySeparateFunction` with the result our async call, we can call jQuery's `.done()` function which is called once our async call is **resolved**.
