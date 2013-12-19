@@ -41,4 +41,10 @@ function mySeparateFunction(data){/*do stuff*/};
 myAsyncFunction().done( mySeparateFunction );
 ```
 
-With this last pattern, since we only care about firing `mySeparateFunction` with the result our async call, we can call jQuery's `.done()` function which is called once our async call is **resolved**.
+With this last pattern, we utilize jQuery's `.done()` function which just calls `mySeparateFunction` as soon as our async call is **resolved** and the promise object is returned.
+
+##jQuery's promise object functions
+* `.done()` 
+* `.fail()` 
+* `.always()` 
+* `.then()` 
